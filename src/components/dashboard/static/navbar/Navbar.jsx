@@ -77,7 +77,8 @@ const Navbar = () => {
 
             <CommonDropdown
               className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-gray-50 shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none"
-              Open={isNotificationsMenuOpen}
+              open={isNotificationsMenuOpen}
+              setOpen={setIsNotificationsMenuOpen}
             >
               <div className="flex flex-col justify-between  py-3 px-2 text-sm">
                 <a
@@ -127,7 +128,8 @@ const Navbar = () => {
 
             <CommonDropdown
               className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-gray-50 shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none"
-              Open={isProfileMenuOpen}
+              open={isProfileMenuOpen}
+              setOpen={setIsProfileMenuOpen}
             >
               <div className="flex flex-col justify-between py-3 px-2 text-sm text-gray-700 font-medium">
                 <a

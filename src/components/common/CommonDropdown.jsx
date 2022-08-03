@@ -1,13 +1,22 @@
-import React, { Fragment, useRef } from "react";
+import React, { Fragment, useEffect, useRef } from "react";
 import { Transition, Menu } from "@headlessui/react";
 
-const CommonDropdown = ({ children, className, Open }) => {
+const CommonDropdown = ({ children, className, open, setOpen }) => {
   const cancelRef = useRef();
+
+  useEffect(() => {
+    document.addEventListener("mousedown", (e) => {
+      if (!cancelRef.current?.contains(e.target)) {
+        setOpen(false);
+      }
+    });
+  }, [cancelRef, open]);
+
   return (
     <>
-      <Menu as={Fragment}>
+      <Menu as={Fragment} ref={cancelRef}>
         <Transition
-          show={Open}
+          show={open}
           as="div"
           enter="transition ease-out duration-100"
           enterFrom="transform opacity-0 scale-95"
