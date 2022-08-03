@@ -20,7 +20,7 @@ const Navbar = () => {
   const { dark_mode } = useSelector((state) => state.darkMode);
 
   return (
-    <header className="z-40 py-4 bg-gray-100  [box-shadow:0_5px_5px_-6px_#333] dark:bg-gray-800">
+    <header className={"z-40 py-4 bg-gray-100  [box-shadow:0_5px_5px_-6px_#333] dark:bg-gray-800"}>
       <div className="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
         {/* <!-- Mobile hamburger --> */}
         <button

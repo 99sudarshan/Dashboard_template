@@ -17,7 +17,7 @@ const App = () => {
     dispatch(setDarkMode(dark === "dark" ? true : false));
   }, [location]);
   return (
-    <div className={`relative `}>
+    <div className={`relative ${dark_mode ? "dark" : ""}`}>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
