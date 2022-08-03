@@ -18,7 +18,7 @@ const CommonDropdown = ({ children, className, open, setOpen }) => {
         <Transition
           show={open}
           as="div"
-          enter="transition ease-out duration-100"
+          enter="transition ease-out duration-200"
           enterFrom="transform opacity-0 scale-95"
           enterTo="transform opacity-100 scale-100"
           leave="transition ease-in duration-75"

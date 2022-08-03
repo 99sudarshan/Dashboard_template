@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Menu } from "@headlessui/react";
+import { useSelector, useDispatch } from "react-redux/es/exports";
 import {
   SunIcon,
   BellIcon,
@@ -10,11 +10,14 @@ import {
   LogoutIcon,
   SearchIcon,
 } from "../../../../assests/icons";
+import { setDarkMode } from "../../../redux/actions/action";
 import CommonDropdown from "./../../../common/CommonDropdown";
 
 const Navbar = () => {
   const [isNotificationsMenuOpen, setIsNotificationsMenuOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+  const dispatch = useDispatch();
+  const { dark_mode } = useSelector((state) => state.darkMode);
 
   return (
     <header className="z-40 py-4 bg-gray-100  [box-shadow:0_5px_5px_-6px_#333] dark:bg-gray-800">
@@ -48,12 +51,18 @@ const Navbar = () => {
               className="rounded-md focus:outline-none focus:ring-purple-200 focus:ring-4"
               //   onClick={toggleMode}
               aria-label="Toggle color mode"
+              onClick={() => {
+                dispatch(setDarkMode(!dark_mode));
+                localStorage.getItem("theme") === "dark"
+                  ? localStorage.removeItem("theme")
+                  : localStorage.setItem("theme", "dark");
+              }}
             >
-              {/* {mode === "dark" ? ( */}
-              <SunIcon className="w-5 h-5" aria-hidden="true" />
-              {/* ) : (
+              {dark_mode ? (
+                <SunIcon className="w-5 h-5" aria-hidden="true" />
+              ) : (
                 <MoonIcon className="w-5 h-5" aria-hidden="true" />
-              )} */}
+              )}
             </button>
           </li>
 
@@ -102,6 +111,7 @@ const Navbar = () => {
                 <a
                   href="#"
                   className="flex justify-between items-center hover:bg-gray-200 py-2 px-2 rounded"
+                  onClick={() => alert("Hello Person")}
                 >
                   <h4 className="font-medium text-gray-700 ">Alerts</h4>
                   <span className="bg-red-100 text-red-600 rounded-full px-2"></span>
@@ -149,6 +159,7 @@ const Navbar = () => {
                 <a
                   href="#"
                   className="flex gap-4 items-center hover:bg-gray-200 py-2 px-2 rounded"
+                  onClick={() => alert("Log out Success")}
                 >
                   <LogoutIcon className="w-4 h-4" />
                   <span>Log Out</span>

@@ -1,12 +1,23 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Layout from "./components/dashboard/containers/Layout";
-import Dashboard from "./components/dashboard/home/Dashboard";
+import React, { lazy, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux/es/exports";
 import Login from "./components/auth/login/Login";
+import { setDarkMode } from "./components/redux/actions/action";
+const Layout = lazy(() => import("./components/dashboard/containers/Layout"));
 
 const App = () => {
+  const location = useLocation();
+  const dispatch = useDispatch();
+  const { dark_mode } = useSelector((state) => state.darkMode);
+  console.log(dark_mode);
+  console.log(location);
+
+  useEffect(() => {
+    const dark = localStorage.getItem("theme");
+    dispatch(setDarkMode(dark === "dark" ? true : false));
+  }, [location]);
   return (
-    <>
+    <div className={`relative `}>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
@@ -14,7 +25,7 @@ const App = () => {
         <Route path="/forgot-password" element={<Login />} />
         <Route path="/dashboard/*" element={<Layout />} />
       </Routes>
-    </>
+    </div>
   );
 };
 
