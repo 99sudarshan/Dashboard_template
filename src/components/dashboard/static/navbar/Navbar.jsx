@@ -25,10 +25,10 @@ const Navbar = () => {
         "z-40 py-4 bg-gray-100  [box-shadow:0_5px_5px_-6px_#333] dark:bg-gray-800"
       }
     >
-      <div className="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-gray-200">
+      <div className="container flex items-center justify-between h-full px-6 mx-auto ">
         {/* <!-- Mobile hamburger --> */}
         <button
-          className="p-1 mr-5 -ml-1 rounded-md  focus:outline-none focus:shadow-outline-purple"
+          className="p-1 mr-5 -ml-1 rounded-md text-purple-600 dark:text-gray-200 focus:outline-none focus:shadow-outline-purple"
           //   onClick={toggleSidebar}
           aria-label="Menu"
         >
@@ -50,7 +50,7 @@ const Navbar = () => {
         </div>
         <ul className="flex items-center flex-shrink-0 space-x-6">
           {/* <!-- Theme toggler --> */}
-          <li className="flex">
+          <li className="flex text-purple-600 dark:text-gray-200">
             <button
               className="rounded-md focus:outline-none focus:ring-purple-200 focus:ring-2"
               //   onClick={toggleMode}
@@ -71,7 +71,7 @@ const Navbar = () => {
           </li>
 
           {/* <!-- Notifications menu --> */}
-          <li className="relative">
+          <li className="relative text-purple-600 dark:text-gray-200">
             <button
               className="relative align-middle rounded-md focus:outline-none focus:ring-purple-200 focus:ring-2"
               onClick={() =>
@@ -93,7 +93,7 @@ const Navbar = () => {
               open={isNotificationsMenuOpen}
               setOpen={setIsNotificationsMenuOpen}
             >
-              <div className="flex flex-col justify-between  py-3 px-2 text-sm">
+              <div className="flex flex-col justify-between  py-3 px-2 text-sm text-gray-700 dark:text-gray-200">
                 <a
                   href="#"
                   className="flex justify-between items-center hover:bg-gray-200 py-2 px-2 rounded"
@@ -127,7 +127,7 @@ const Navbar = () => {
           {/* <!-- Profile menu --> */}
           <li className="relative">
             <button
-              className="rounded-full focus:ring-purple-200 focus:ring-2 focus:outline-none align-middle"
+              className="rounded-full focus:ring-purple-200 focus:ring-2 focus:outline-none align-middle text-purple-600 dark:text-gray-200"
               onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
               aria-label="Account"
               aria-haspopup="true"
@@ -145,7 +145,7 @@ const Navbar = () => {
               open={isProfileMenuOpen}
               setOpen={setIsProfileMenuOpen}
             >
-              <div className="flex flex-col justify-between py-3 px-2 text-sm font-medium">
+              <div className="flex flex-col justify-between py-3 px-2 text-sm font-medium text-gray-700 dark:text-gray-200">
                 <a
                   href="#"
                   className="flex gap-4 items-center hover:bg-gray-200 py-2 px-2 rounded"
