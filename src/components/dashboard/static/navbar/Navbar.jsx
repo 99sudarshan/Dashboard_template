@@ -25,7 +25,7 @@ const Navbar = () => {
         "z-40 py-4 bg-gray-100  [box-shadow:0_5px_5px_-6px_#333] dark:bg-gray-800"
       }
     >
-      <div className="container flex items-center justify-between h-full px-6 mx-auto text-gray-700 dark:text-gray-200">
+      <div className="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-gray-200">
         {/* <!-- Mobile hamburger --> */}
         <button
           className="p-1 mr-5 -ml-1 rounded-md  focus:outline-none focus:shadow-outline-purple"
