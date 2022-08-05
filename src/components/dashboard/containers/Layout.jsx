@@ -10,7 +10,7 @@ const Page404 = lazy(() => import("../../common/Page404"));
 
 const Layout = () => {
   return (
-    <div className={`flex h-screen bg-gray-50  dark:bg-gray-900 `}>
+    <div className="flex h-screen bg-white dark:bg-gray-900">
       <DesktopSidebar />
 
       <div className="flex flex-col flex-1 w-full ">
