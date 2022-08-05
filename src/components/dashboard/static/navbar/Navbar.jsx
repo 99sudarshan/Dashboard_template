@@ -20,8 +20,12 @@ const Navbar = () => {
   const { dark_mode } = useSelector((state) => state.darkMode);
 
   return (
-    <header className={"z-40 py-4 bg-gray-100  [box-shadow:0_5px_5px_-6px_#333] dark:bg-gray-800"}>
-      <div className="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
+    <header
+      className={
+        "z-40 py-4 bg-gray-100  [box-shadow:0_5px_5px_-6px_#333] dark:bg-gray-800"
+      }
+    >
+      <div className="container flex items-center justify-between h-full px-6 mx-auto text-gray-700 dark:text-gray-200">
         {/* <!-- Mobile hamburger --> */}
         <button
           className="p-1 mr-5 -ml-1 rounded-md  focus:outline-none focus:shadow-outline-purple"
@@ -48,7 +52,7 @@ const Navbar = () => {
           {/* <!-- Theme toggler --> */}
           <li className="flex">
             <button
-              className="rounded-md focus:outline-none focus:ring-purple-200 focus:ring-4"
+              className="rounded-md focus:outline-none focus:ring-purple-200 focus:ring-2"
               //   onClick={toggleMode}
               aria-label="Toggle color mode"
               onClick={() => {
@@ -69,7 +73,7 @@ const Navbar = () => {
           {/* <!-- Notifications menu --> */}
           <li className="relative">
             <button
-              className="relative align-middle rounded-md focus:outline-none focus:ring-purple-200 focus:ring-4"
+              className="relative align-middle rounded-md focus:outline-none focus:ring-purple-200 focus:ring-2"
               onClick={() =>
                 setIsNotificationsMenuOpen(!isNotificationsMenuOpen)
               }
@@ -85,7 +89,7 @@ const Navbar = () => {
             </button>
 
             <CommonDropdown
-              className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-gray-50 shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none"
+              className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-gray-50 dark:bg-gray-700 shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none"
               open={isNotificationsMenuOpen}
               setOpen={setIsNotificationsMenuOpen}
             >
@@ -94,7 +98,7 @@ const Navbar = () => {
                   href="#"
                   className="flex justify-between items-center hover:bg-gray-200 py-2 px-2 rounded"
                 >
-                  <h4 className="font-medium text-gray-700 ">Messages</h4>
+                  <h4 className="font-medium ">Messages</h4>
                   <span className="bg-red-100 text-red-600 rounded-full px-2">
                     13
                   </span>
@@ -103,7 +107,7 @@ const Navbar = () => {
                   href="#"
                   className="flex justify-between items-center hover:bg-gray-200 py-2 px-2 rounded"
                 >
-                  <h4 className="font-medium text-gray-700 ">Sales</h4>
+                  <h4 className="font-medium ">Sales</h4>
                   <span className="bg-red-100 text-red-600 rounded-full px-2">
                     2
                   </span>
@@ -113,7 +117,7 @@ const Navbar = () => {
                   className="flex justify-between items-center hover:bg-gray-200 py-2 px-2 rounded"
                   onClick={() => alert("Hello Person")}
                 >
-                  <h4 className="font-medium text-gray-700 ">Alerts</h4>
+                  <h4 className="font-medium">Alerts</h4>
                   <span className="bg-red-100 text-red-600 rounded-full px-2"></span>
                 </a>
               </div>
@@ -123,7 +127,7 @@ const Navbar = () => {
           {/* <!-- Profile menu --> */}
           <li className="relative">
             <button
-              className="rounded-full focus:ring-purple-200 focus:ring-4 focus:outline-none align-middle"
+              className="rounded-full focus:ring-purple-200 focus:ring-2 focus:outline-none align-middle"
               onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
               aria-label="Account"
               aria-haspopup="true"
@@ -137,11 +141,11 @@ const Navbar = () => {
             </button>
 
             <CommonDropdown
-              className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-gray-50 shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none"
+              className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-gray-50 dark:bg-gray-700 shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none"
               open={isProfileMenuOpen}
               setOpen={setIsProfileMenuOpen}
             >
-              <div className="flex flex-col justify-between py-3 px-2 text-sm text-gray-700 font-medium">
+              <div className="flex flex-col justify-between py-3 px-2 text-sm font-medium">
                 <a
                   href="#"
                   className="flex gap-4 items-center hover:bg-gray-200 py-2 px-2 rounded"
