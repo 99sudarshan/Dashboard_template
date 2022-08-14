@@ -2,7 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { DropdownIcon } from "../../../../../assests/icons";
 
-const SidebarSubmenu = ({ activeIndex, index, route, setIndex }) => {
+const SidebarSubmenu = ({
+  activeIndex,
+  index,
+  route,
+  setIndex,
+  toggle,
+  isToggle,
+  width,
+}) => {
   return (
     <>
       <div className="relative cursor-pointer">
@@ -12,10 +20,12 @@ const SidebarSubmenu = ({ activeIndex, index, route, setIndex }) => {
         <div className={` sidebar-item justify-between`} onClick={setIndex}>
           <div className="flex items-center">
             {route.icon}
-            <span className="ml-4">{route.name}</span>
+            {(!isToggle || width < 1023) && (
+              <span className="ml-4">{route.name}</span>
+            )}
           </div>
           <DropdownIcon
-            className={`h-5 w-5 animation transform ${
+            className={`h-5 w-5 animation  transform ${
               activeIndex === index ? "-rotate-180" : "rotate-0"
             }`}
           />
@@ -23,7 +33,10 @@ const SidebarSubmenu = ({ activeIndex, index, route, setIndex }) => {
       </div>
       <div
         className={`px-6  overflow-hidden animation ${
-          activeIndex === index ? "max-h-40" : "max-h-0"
+          (activeIndex === index && width < 1023) ||
+          (activeIndex === index && !isToggle && width > 1023)
+            ? "max-h-40"
+            : "max-h-0"
         }`}
       >
         <ul
@@ -36,6 +49,7 @@ const SidebarSubmenu = ({ activeIndex, index, route, setIndex }) => {
                 to={path}
                 key={index + 1}
                 className={`px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 `}
+                onClick={toggle}
               >
                 {name}
               </Link>

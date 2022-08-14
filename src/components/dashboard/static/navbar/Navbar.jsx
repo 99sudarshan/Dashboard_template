@@ -13,7 +13,7 @@ import {
 import { setDarkMode } from "../../../redux/actions/action";
 import CommonDropdown from "./../../../common/CommonDropdown";
 
-const Navbar = () => {
+const Navbar = ({ isToggle, toggle }) => {
   const [isNotificationsMenuOpen, setIsNotificationsMenuOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ const Navbar = () => {
         {/* <!-- Mobile hamburger --> */}
         <button
           className="p-1 mr-5 -ml-1 rounded-md text-purple-600 dark:text-gray-200 focus:outline-none focus:shadow-outline-purple"
-          //   onClick={toggleSidebar}
+          onClick={() => toggle(!isToggle)}
           aria-label="Menu"
         >
           <MenuIcon className="w-8 h-8" aria-hidden="true" />

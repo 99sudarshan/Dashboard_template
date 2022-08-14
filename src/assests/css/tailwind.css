@@ -13,6 +13,10 @@
   @apply absolute inset-y-0 left-0 w-1 bg-gray-600 rounded-tr-lg rounded-br-lg;
 }
 
+.button-style {
+  @apply bg-purple-600 py-2 px-5 flex justify-center items-center  text-white shadow-md shadow-gray-600 hover:bg-purple-700 dark:shadow-none animation;
+}
+
 .animation {
   @apply transition-all duration-300 ease-in-out;
 }

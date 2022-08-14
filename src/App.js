@@ -9,8 +9,6 @@ const App = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const { dark_mode } = useSelector((state) => state.darkMode);
-  console.log(dark_mode);
-  console.log(location);
 
   useEffect(() => {
     const dark = localStorage.getItem("theme");
