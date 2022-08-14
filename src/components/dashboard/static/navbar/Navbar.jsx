@@ -148,21 +148,21 @@ const Navbar = ({ isToggle, toggle }) => {
               <div className="flex flex-col justify-between py-3 px-2 text-sm font-medium text-gray-700 dark:text-gray-200">
                 <a
                   href="#"
-                  className="flex gap-4 items-center hover:bg-gray-200 py-2 px-2 rounded"
+                  className="flex gap-4 items-center hover:bg-gray-200 dark:hover:bg-gray-800 py-2 px-2 rounded"
                 >
                   <OutlinePersonIcon className="w-4 h-4" />
                   <span>Profile</span>
                 </a>
                 <a
                   href="#"
-                  className="flex gap-4 items-center hover:bg-gray-200 py-2 px-2 rounded"
+                  className="flex gap-4 items-center hover:bg-gray-200 dark:hover:bg-gray-800 py-2 px-2 rounded"
                 >
                   <OutlineCogIcon className="w-4 h-4 " />
                   <span>Settings</span>
                 </a>
                 <a
                   href="#"
-                  className="flex gap-4 items-center hover:bg-gray-200 py-2 px-2 rounded"
+                  className="flex gap-4 items-center hover:bg-gray-200 dark:hover:bg-gray-800 py-2 px-2 rounded"
                   onClick={() => alert("Log out Success")}
                 >
                   <LogoutIcon className="w-4 h-4" />

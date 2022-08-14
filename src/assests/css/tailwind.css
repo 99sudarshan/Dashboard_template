@@ -2,6 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  [type="text"],
+  [type="email"],
+  [type="url"],
+  [type="password"],
+  [type="number"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="week"],
+  [type="date"],
+  [type="file"],
+  [multiple],
+  textarea,
+  select {
+    @apply block w-full text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none  dark:text-gray-300 bg-white py-2 px-3  border border-border-extraLight;
+  }
+  [type="checkbox"] {
+    @apply w-4 h-4 border-gray-400 text-text-paragraph;
+  }
+  [type="radio"] {
+    @apply border-gray-300 text-blue-500;
+  }
+  label {
+    @apply text-gray-700 dark:text-gray-400;
+  }
+  /* .css-b62m3t-container {
+    @apply max-w-64;
+  } */
+}
+
+.error {
+  @apply text-red-500 h-4;
+}
+
 .sidebar-item {
   @apply inline-flex relative px-6 py-3 items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100;
 }
