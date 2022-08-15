@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ImageLight from "../../../assests/images/login-office.jpeg";
+import ImageDark from "../../../assests/images/login-office-dark.jpeg";
 import LoginForm from "./LoginForm";
 
 const Login = () => {
@@ -15,10 +16,16 @@ const Login = () => {
               src={ImageLight}
               alt="Office"
             />
+            <img
+              aria-hidden="true"
+              className="hidden object-cover w-full h-full dark:block"
+              src={ImageDark}
+              alt="Office"
+            />
           </div>
           <main className="flex items-center justify-center p-6 sm:p-12 md:w-1/2 bg-gray-100">
             <div className="w-full">
-              <h1 className="text-xl font-semibold text-gray-700 dark:text-gray-200">
+              <h1 className="text-xl mb-4 font-semibold text-gray-700 dark:text-gray-200">
                 Login
               </h1>
               <LoginForm />

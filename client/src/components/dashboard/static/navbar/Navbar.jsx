@@ -22,10 +22,10 @@ const Navbar = ({ isToggle, toggle }) => {
   return (
     <header
       className={
-        "z-40 py-4 bg-gray-100  [box-shadow:0_5px_5px_-6px_#333] dark:bg-gray-800"
+        "z-40 py-4 bg-gray-200  [box-shadow:0_5px_5px_-6px_#333] dark:bg-gray-800"
       }
     >
-      <div className="container flex items-center justify-between h-full px-6 mx-auto ">
+      <div className="flex items-center justify-between h-full px-6 mx-auto ">
         {/* <!-- Mobile hamburger --> */}
         <button
           className="p-1 mr-5 -ml-1 rounded-md text-purple-600 dark:text-gray-200 focus:outline-none focus:shadow-outline-purple"

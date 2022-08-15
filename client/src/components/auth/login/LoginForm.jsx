@@ -17,7 +17,7 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className='space-y-2'>
       {loginInputs.map((item, i) => {
         const { type, name, placeholder, validation, label } = item;
         return (

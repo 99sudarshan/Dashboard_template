@@ -30,11 +30,11 @@ const DesktopSidebar = ({ isToggle, toggle, width }) => {
 
   return (
     <aside
-      className={`z-30 flex-shrink-0 hidden  overflow-y-auto bg-gray-100 dark:bg-gray-800 lg:block aside animation ${
+      className={`z-30 flex-shrink-0 hidden  overflow-y-auto bg-gray-200 dark:bg-gray-800 lg:block aside animation ${
         isToggle ? "w-20" : "w-64"
       }`}
     >
-      <div className="py-4 text-gray-500 dark:text-gray-400">
+      <div className="py-4 text-gray-600 dark:text-gray-400">
         <a
           className="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
           href="#"

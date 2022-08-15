@@ -38,11 +38,11 @@ const MobileSidebar = ({ isToggle, toggle, width }) => {
         ></div>
       )}
       <aside
-        className={`fixed inset-y-0 z-50 flex-shrink-0 w-64 mt-16 overflow-y-auto bg-gray-100 dark:bg-gray-800 lg:hidden transform animation ${
+        className={`fixed inset-y-0 z-50 flex-shrink-0 w-64 mt-16 overflow-y-auto bg-gray-200 dark:bg-gray-800 lg:hidden transform animation ${
           isToggle ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="py-4 text-gray-500 dark:text-gray-400">
+        <div className="py-4 text-gray-600 dark:text-gray-400">
           <a
             className="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
             href="#"

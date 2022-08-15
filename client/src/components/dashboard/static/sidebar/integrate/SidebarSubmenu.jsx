@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { DropdownIcon } from "../../../../../assests/icons";
 
 const SidebarSubmenu = ({
@@ -11,6 +11,15 @@ const SidebarSubmenu = ({
   isToggle,
   width,
 }) => {
+  const [pathName, setPathName] = useState("");
+  const nav = useLocation().pathname;
+
+  useEffect(() => {
+    if (nav) {
+      setPathName(nav);
+    }
+  }, [nav]);
+
   return (
     <>
       <div className="relative cursor-pointer">
@@ -48,7 +57,9 @@ const SidebarSubmenu = ({
               <Link
                 to={path}
                 key={index + 1}
-                className={`px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 `}
+                className={`px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ${
+                  pathName === path && "text-gray-800"
+                }`}
                 onClick={toggle}
               >
                 {name}
